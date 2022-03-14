@@ -19,6 +19,9 @@ public class Livro {
     @Column(nullable = false)
     private String ISBN;
 
+    @Enumerated(EnumType.STRING)
+    private TipoCirculacao circulacao;
+
     @Column(nullable = false)
     private LocalDate dataPublicacao;
 
