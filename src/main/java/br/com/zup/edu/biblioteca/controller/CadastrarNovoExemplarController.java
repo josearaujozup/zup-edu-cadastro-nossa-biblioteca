@@ -31,7 +31,7 @@ public class CadastrarNovoExemplarController {
 	@PostMapping
 	public ResponseEntity<Void> cadastrar(@PathVariable String isbn, UriComponentsBuilder uriComponentsBuilder){
 		
-		Livro livro = livroRepository.findByISBN(isbn).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não existe cadastro de fornecedor para o id informado"));
+		Livro livro = livroRepository.findByISBN(isbn).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não existe cadastro de livro para o isbn informado"));
 		
 		Exemplar novoExemplar = new Exemplar(livro);
 		
