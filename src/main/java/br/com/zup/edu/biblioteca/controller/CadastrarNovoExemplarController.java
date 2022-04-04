@@ -34,7 +34,7 @@ public class CadastrarNovoExemplarController {
 		Livro livro = livroRepository.findByISBN(isbn).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não existe cadastro de livro para o isbn informado"));
 		
 		Exemplar novoExemplar = new Exemplar(livro);
-		
+		//comentario
 		repository.save(novoExemplar);
 		URI location = uriComponentsBuilder.path("/livros/{isbn}/exemplares/{id}").buildAndExpand(livro.getId(),novoExemplar.getId()).toUri();
 		
