@@ -28,7 +28,7 @@ public class CadastrarNovoLivroController {
 
         repository.save(novoLivro);
 
-        URI location = UriComponentsBuilder.fromPath("/livros/{id}")
+        URI location = uriComponentsBuilder.path("/livros/{id}")
                 .buildAndExpand(novoLivro.getId())
                 .toUri();
 
